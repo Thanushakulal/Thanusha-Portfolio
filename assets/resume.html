@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanusha | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6d28d9;
+      --secondary: #1d4ed8;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+    
+    .resume-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 3rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    
+    /* Top action banner */
+    .action-bar {
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: var(--primary);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    
+    .btn-action:hover {
+      background-color: #5b21b6;
+    }
+    
+    .btn-back {
+      color: var(--text-muted);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+    }
+    
+    .btn-back:hover {
+      color: var(--primary);
+    }
+    
+    /* Header layout */
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    
+    .header-left h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+    
+    .header-left h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-top: 0.25rem;
+    }
+    
+    .header-right {
+      text-align: right;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .header-right a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .header-right a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Section layouts */
+    .section {
+      margin-bottom: 2rem;
+    }
+    
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    
+    .item {
+      margin-bottom: 1.25rem;
+    }
+    
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    
+    .item-title {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+    
+    .item-date {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    
+    .item-subtitle {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .item-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    
+    .bullet-list {
+      list-style-type: square;
+      margin-left: 1.25rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    .skills-cat {
+      font-size: 0.9rem;
+    }
+    
+    .skills-cat strong {
+      color: var(--text-dark);
+    }
+    
+    .skills-cat span {
+      color: var(--text-muted);
+    }
+    
+    /* Responsive styling */
+    @media (max-width: 600px) {
+      .resume-wrapper {
+        padding: 1.5rem;
+      }
+      
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .header-right {
+        text-align: left;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .item-header {
+        flex-direction: column;
+      }
+      
+      .item-date {
+        margin-top: 0.15rem;
+        margin-bottom: 0.25rem;
+      }
+    }
+    
+    /* PRINT MEDIA RULES */
+    @media print {
+      body {
+        background-color: #ffffff;
+        padding: 0;
+      }
+      
+      .resume-wrapper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      
+      .action-bar {
+        display: none;
+      }
+      
+      .btn-action {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Banner -->
+  <div class="action-bar">
+    <a href="../index.html" class="btn-back">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Portfolio
+    </a>
+    
+    <button onclick="window.print()" class="btn-action">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Main Printable Resume Sheet -->
+  <div class="resume-wrapper">
+    <header>
+      <div class="header-left">
+        <h1>THANUSHA</h1>
+        <h2>Computer Science Engineering Student</h2>
+      </div>
+      <div class="header-right">
+        <span>Kasaragod, Kerala | 9778765868</span>
+        <span>Email: <a href="mailto:thanushakulal07@gmail.com">thanushakulal07@gmail.com</a></span>
+        <span>GitHub: <a href="https://github.com/Thanushakulal" target="_blank">github.com/Thanushakulal</a></span>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/thanusha07" target="_blank">linkedin.com/in/thanusha07</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary Section -->
+    <div class="section">
+      <h3 class="section-title">Professional Summary</h3>
+      <p class="item-desc" style="font-size: 0.95rem; line-height: 1.6;">
+        Third-year Computer Science Engineering student focusing on IoT and Cybersecurity. Skilled in programming and web development, with hands-on practice through academic projects and workshops. Actively learning to apply technical concepts in real-world scenarios and keen to develop practical skills in secure systems and embedded technologies.
+      </p>
+    </div>
+
+    <!-- Education Section -->
+    <div class="section">
+      <h3 class="section-title">Education</h3>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title" style="font-weight: 700;">Bachelor of Engineering in Computer Science with IoT, Cybersecurity including Blockchain Technology</span>
+          <span class="item-date">Graduating in: 2027</span>
+        </div>
+        <div class="item-subtitle" style="margin-top: 0.15rem;">P.A. College of Engineering, Mangalore, Karnataka</div>
+        <p class="item-desc"><strong>GPA:</strong> 9.2 / 10.00</p>
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section">
+      <h3 class="section-title">Projects</h3>
+      
+      <!-- Rain Sensor -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title" style="font-weight: 700;">Project Title: Rain Sensor Automation System</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Designed and implemented a rain detection system using Arduino and moisture sensors, reducing unnecessary water usage in small garden setups by 70%.</li>
+        </ul>
+      </div>
+
+      <!-- RFID Toll Collection -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title" style="font-weight: 700;">Project Title: RFID Toll Collection System</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Built an RFID-based toll gate system that reduced vehicle processing time by 60% and eliminated manual toll collection.</li>
+        </ul>
+      </div>
+
+      <!-- ICSB Digital Magazine -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title" style="font-weight: 700;">Project Title: ICSB Digital Magazine</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed a digital magazine using Flask and SQLite to document 25+ departmental events, improving content accessibility and stakeholder engagement.</li>
+        </ul>
+      </div>
+
+      <!-- LifeLink -->
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title" style="font-weight: 700;">Project Title: LifeLink-Multilingual Web-Based Life Saving Donation System</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed a full-stack web application to connect donors and recipients through a centralized, real-time system.</li>
+          <li>Implemented secure registration, admin dashboard, multilingual support, and automated email notifications using Next.js and Firebase.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="section">
+      <h3 class="section-title">Certifications</h3>
+      <ul class="bullet-list" style="list-style-type: disc; margin-left: 1.25rem; gap: 0.6rem;">
+        <li>
+          <strong>Networking Basics</strong> – Cisco Networking Academy - Completed foundational training in computer networking concepts, including network types, protocols, IP addressing, network devices, and basic troubleshooting. Gained understanding of how data is transmitted across networks and the fundamentals of network security.
+        </li>
+        <li>
+          <strong>AI for Beginners Certification</strong> - Completed a foundational course on Artificial Intelligence, covering core AI concepts, real-world applications, importance of data in AI systems, business use cases, and ethical considerations of AI technologies.
+        </li>
+        <li>
+          <strong>Google Cloud Skills Boost – Generative AI</strong> – Completed 20+ hours of hands-on training in generative AI and deep learning concepts using Google Cloud.
+        </li>
+        <li>
+          <strong>CS50x: Introduction to Computer Science</strong> – Harvard University - Completed an in-depth course covering algorithms, data structures, web development, and problem-solving using C, Python, SQL, and more.
+        </li>
+        <li>
+          <strong>[Nitte] Hackathon (24-hour)</strong> - Developed an AI-driven LinkedIn sentiment analysis tool for influencer reputation management.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section" style="margin-bottom: 0;">
+      <h3 class="section-title">Skills</h3>
+      <div class="skills-grid" style="grid-template-columns: 1fr; gap: 0.5rem;">
+        <div class="skills-cat">
+          <strong>Technical Skills:</strong>
+          <span>Programming: Python | Web Development: HTML, CSS</span>
+        </div>
+        <div class="skills-cat">
+          <strong>Computer:</strong>
+          <span>Microsoft Excel, PowerPoint</span>
+        </div>
+        <div class="skills-cat">
+          <strong>Language:</strong>
+          <span>Fluent English</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Automatically trigger print dialog if requested in query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('download') === 'true') {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          window.print();
+        }, 300);
+      });
+    }
+  </script>
+</body>
+</html>
