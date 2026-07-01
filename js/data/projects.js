@@ -13,7 +13,7 @@ export const projectsData = [
       "Custom themes with glassmorphic animations and charts representation"
     ],
     tech: ["React", "CSS3", "JavaScript", "MathJS"],
-    demoUrl: "#",
+    demoUrl: "https://calculator-nu-six-87.vercel.app/",
     codeUrl: "https://github.com/Thanushakulal/Calculator",
     illustration: `<svg viewBox="0 0 200 120" width="100%" height="100%" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="20" y="10" width="160" height="100" rx="10" ry="10" fill="currentColor" fill-opacity="0.03" stroke-width="1.5"></rect>
