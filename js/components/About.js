@@ -12,7 +12,7 @@ export function renderAbout() {
         <!-- Interactive Dashboard Metrics -->
         <div class="about-dashboard reveal-left">
           <div class="card about-dash-card">
-            <span class="about-dash-val">3rd</span>
+            <span class="about-dash-val">4rth</span>
             <span class="about-dash-lbl">Year B.E. Student</span>
           </div>
           
